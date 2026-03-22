@@ -48,4 +48,4 @@ A high-performance currency conversion tool with real-time API integration, clea
 
 ---
 
-*Made with ❤️ by [Your Name/GitHub]*
+*Made with ❤️ by [Agam Pathak]*
