@@ -10,7 +10,18 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-body { background: var(--bg); color: #fff; font-family: var(--font-body); min-height: 100vh; overflow: hidden; display: flex; justify-content: center; align-items: center; }
+body { 
+    background: var(--bg); 
+    color: #fff; 
+    font-family: var(--font-body); 
+    min-height: 100vh; 
+    overflow-x: hidden;
+    overflow-y: auto; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 20px;
+}
 
 .vortex-background {
     position: fixed; width: 100%; height: 100%; top: 0; left: 0;
@@ -38,12 +49,14 @@ header p { font-size: 0.7rem; letter-spacing: 4px; color: rgba(255, 255, 255, 0.
 .vortex-arena { position: relative; margin-bottom: 3.5rem; display: flex; justify-content: center; }
 
 .vortex-wheel {
-    position: relative; width: 400px; height: 400px;
+    position: relative; 
+    width: 320px; 
+    height: 320px;
     border-radius: 50%;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 242, 255, 0.1);
 }
 
-#wheel-canvas { width: 400px; height: 400px; }
+#wheel-canvas { width: 320px; height: 320px; }
 
 .center-glow {
     position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
@@ -61,20 +74,22 @@ header p { font-size: 0.7rem; letter-spacing: 4px; color: rgba(255, 255, 255, 0.
 }
 
 /* Controls */
-.prizes-list { margin-bottom: 2.5rem; }
+.prizes-list { margin-bottom: 1.5rem; }
 .prize-card {
     font-family: var(--font-heading); color: var(--primary);
-    font-size: 1.4rem; font-weight: 800; letter-spacing: 2px;
-    padding: 1rem; border-radius: 12px;
+    font-size: 1rem; font-weight: 800; letter-spacing: 2px;
+    padding: 0.8rem; border-radius: 12px;
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.05);
     transition: 0.5s;
+    opacity: 0.8;
 }
 
 .main-btn {
     width: 100%; background: var(--primary);
-    color: var(--bg); border: none; padding: 1.4rem;
+    color: var(--bg); border: none; padding: 1.2rem;
     font-family: var(--font-heading); font-weight: 900;
+    font-size: 1.2rem;
     letter-spacing: 2px; border-radius: 50px; cursor: pointer;
     transition: 0.3s;
     box-shadow: 0 10px 30px rgba(0, 242, 255, 0.2);
