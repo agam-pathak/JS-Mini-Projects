@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelMind | Memory Matrix</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Outfit:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="game-container">
+        <header>
+            <h1>Pixel<span>Mind</span></h1>
+            <div class="stats">
+                <div class="stat">LEVEL: <span id="level">1</span></div>
+                <div class="stat">SCORE: <span id="score">0</span></div>
+            </div>
+        </header>
+
+        <div class="matrix-arena" id="arena">
+            <!-- Tiles will be generated -->
+        </div>
+
+        <div class="controls">
+            <button id="start-btn" class="main-btn">INITIATE MATRIX</button>
+            <p id="status">READY TO SCAN</p>
+        </div>
+
+        <div id="game-over" class="modal hidden">
+            <div class="content">
+                <h2>SYNAPSE FAILURE</h2>
+                <p>Final Score: <span id="final-score">0</span></p>
+                <button onclick="location.reload()" class="main-btn">RE-INITIALIZE</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sound Effects -->
+    <audio id="sfx-press" src="https://assets.mixkit.co/sfx/preview/mixkit-mechanical-keyboard-single-key-press-2533.mp3"></audio>
+    <audio id="sfx-fail" src="https://assets.mixkit.co/sfx/preview/mixkit-electric-hum-and-surge-out-2636.mp3"></audio>
+    <audio id="sfx-win" src="https://assets.mixkit.co/sfx/preview/mixkit-sci-fi-confirmation-914.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

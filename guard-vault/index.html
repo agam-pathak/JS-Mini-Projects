@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GuardVault | Security Key Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="vault-container">
+        <header>
+            <div class="icon">🔐</div>
+            <h1>Guard<span>Vault</span></h1>
+            <p>ADVANCED ENTROPY GENERATOR</p>
+        </header>
+
+        <section class="display-panel">
+            <div class="output-wrapper">
+                <input type="text" id="password-output" readonly placeholder="P-7X8!Q@M0">
+                <button id="copy-btn" title="Copy to Clipboard">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+            </div>
+            <div class="strength-meter">
+                <div id="strength-bar" class="bar"></div>
+                <span id="strength-text">WEAK</span>
+            </div>
+        </section>
+
+        <section class="settings">
+            <div class="setting-row">
+                <label>LENGTH: <span id="len-val">12</span></label>
+                <input type="range" id="length" min="8" max="32" value="12">
+            </div>
+
+            <div class="checkbox-grid">
+                <label class="check-box">
+                    <input type="checkbox" id="uppercase" checked>
+                    <span>ABC</span>
+                </label>
+                <label class="check-box">
+                    <input type="checkbox" id="lowercase" checked>
+                    <span>abc</span>
+                </label>
+                <label class="check-box">
+                    <input type="checkbox" id="numbers" checked>
+                    <span>123</span>
+                </label>
+                <label class="check-box">
+                    <input type="checkbox" id="symbols" checked>
+                    <span>!@#</span>
+                </label>
+            </div>
+
+            <button id="generate-btn" class="main-btn">GENERATE KEY</button>
+        </section>
+
+        <footer>
+            <p>ENCRYPTION STATUS: <span>ACTIVE</span></p>
+        </footer>
+    </div>
+
+    <!-- Background Decoration -->
+    <div class="scanline"></div>
+    <div class="glow red"></div>
+    <div class="glow blue"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

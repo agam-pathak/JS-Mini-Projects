@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeQuiz | Neural Challenge</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="game-container">
+        <header>
+            <div class="logo">CODE<span>QUIZ</span></div>
+            <div class="progress-bar-container">
+                <div id="progress" class="progress-bar"></div>
+            </div>
+            <div class="stats">
+                <span>EXP: <strong id="score">0</strong></span>
+                <span>LEVEL: <strong id="level">1</strong></span>
+            </div>
+        </header>
+
+        <main id="quiz-arena">
+            <div id="question-box" class="question-box">
+                <p id="question-text">INITIALIZING NEURAL LINK...</p>
+                <div id="options" class="options-grid"></div>
+            </div>
+        </main>
+
+        <div id="result-screen" class="result-screen hidden">
+            <h2>ACCESS GRANTED</h2>
+            <p>Your Rank: <span id="final-rank">Junior Dev</span></p>
+            <p>Score: <span id="final-score">0</span></p>
+            <button onclick="location.reload()" class="main-btn">RE-INITIALIZE</button>
+        </div>
+    </div>
+
+    <!-- Sound Effects -->
+    <audio id="sfx-correct" src="https://assets.mixkit.co/sfx/preview/mixkit-sci-fi-confirmation-914.mp3"></audio>
+    <audio id="sfx-wrong" src="https://assets.mixkit.co/sfx/preview/mixkit-software-interface-back-2575.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

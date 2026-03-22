@@ -1,0 +1,191 @@
+:root {
+    --primary: #00ff2b; /* Security Green */
+    --urgent: #ff0044; /* Alert Red */
+    --caution: #ff8a00; /* Warning Yellow */
+    --bg: #0a0a14;
+    --card-bg: #11111d;
+    --font-heading: 'Outfit', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: var(--bg);
+    color: #fff;
+    font-family: var(--font-heading);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.vault-container {
+    width: 90%;
+    max-width: 450px;
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+    padding: 3rem 2rem;
+    text-align: center;
+    box-shadow: 0 50px 100px rgba(0,0,0,0.6);
+    position: relative;
+    overflow: hidden;
+}
+
+header { margin-bottom: 2.5rem; }
+header .icon { font-size: 3rem; margin-bottom: 1rem; }
+header h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: 2px; }
+header h1 span { color: var(--primary); }
+header p { font-size: 0.65rem; letter-spacing: 4px; color: rgba(255, 255, 255, 0.3); margin-top: 0.5rem; }
+
+/* Display Panel */
+.display-panel { margin-bottom: 2.5rem; }
+
+.output-wrapper {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+#password-output {
+    background: transparent;
+    border: none;
+    color: var(--primary);
+    font-family: var(--font-mono);
+    font-size: 1.4rem;
+    width: 85%;
+    outline: none;
+    letter-spacing: 2px;
+}
+
+#copy-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#copy-btn:hover { color: var(--primary); transform: scale(1.1); }
+#copy-btn svg { width: 24px; height: 24px; }
+
+/* Strength Meter */
+.strength-meter {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+.bar {
+    flex-grow: 1;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.bar::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 20%; height: 100%;
+    background: var(--urgent);
+    transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.strength-meter.weak .bar::after { width: 33%; background: var(--urgent); }
+.strength-meter.medium .bar::after { width: 66%; background: var(--caution); }
+.strength-meter.strong .bar::after { width: 100%; background: var(--primary); box-shadow: 0 0 10px var(--primary); }
+
+/* Settings */
+.settings { text-align: left; }
+.setting-row { margin-bottom: 1.5rem; }
+.setting-row label { display: block; font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 1rem; color: rgba(255, 255, 255, 0.5); }
+.setting-row label span { color: var(--primary); font-family: var(--font-mono); }
+
+input[type=range] {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    height: 4px;
+    border-radius: 10px;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px; height: 16px;
+    background: var(--primary);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--primary);
+}
+
+.checkbox-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 2rem;
+}
+
+.check-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 12px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.check-box span { font-size: 0.8rem; font-family: var(--font-mono); letter-spacing: 2px; opacity: 0.4; }
+.check-box input:checked + span { opacity: 1; color: var(--primary); }
+
+.main-btn {
+    width: 100%;
+    background: var(--primary);
+    color: var(--bg);
+    border: none; padding: 1.2rem;
+    font-family: var(--font-heading);
+    font-weight: 800; letter-spacing: 2px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(0, 255, 43, 0.2);
+}
+
+.main-btn:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(0, 255, 43, 0.4); }
+
+/* Decorative Elements */
+.scanline {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 2px;
+    background: rgba(0, 255, 43, 0.05);
+    animation: scan 4s infinite linear;
+    z-index: 5;
+}
+
+@keyframes scan { from { top: 0; } to { top: 100%; } }
+
+.glow {
+    position: fixed; width: 300px; height: 300px;
+    filter: blur(100px); border-radius: 50%;
+    z-index: -1; opacity: 0.1;
+}
+
+.glow.red { background: var(--urgent); top: -100px; right: -100px; }
+.glow.blue { background: #0088ff; bottom: -100px; left: -100px; }
+
+footer { margin-top: 2rem; font-size: 0.6rem; letter-spacing: 3px; color: rgba(255, 255, 255, 0.2); }
+footer span { color: var(--primary); font-weight: 800; }
