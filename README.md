@@ -8,32 +8,35 @@ A premium "Game Gallery" and collection of high-performance arcade games and mod
 
 ## 🎮 Games Gallery
 
-### ☄️ [Void Strike](./Void_Strike)
+### 🔌 [Cyber-Type](./cyber-type)
+A high-intensity typing hack simulator. Type technical words and commands to breach the neural link. Features real-time WPM tracking and progressive difficulty.
+
+### ☄️ [Void-Strike](./void-strike)
 An intense space-themed arcade shooter with neon aesthetics and fast-paced gameplay. Features smooth particle effects and dynamic score tracking.
 
-### 🕹️ [Synth Quest](./Synth_Quest)
+### 🕹️ [Synth-Quest](./synth-quest)
 A retro-wave inspired platformer with rhythmic elements. Includes jumping mechanics, double-jumps, and a stylized game-over system.
 
-### 🐍 [Snake Game](./Snake_Game)
+### 🐍 [Snake-Game](./snake-game)
 A modern take on the classic Snake game featuring a sleek dark-mode UI, smooth movement physics, and responsive controls.
 
-### 💣 [Cyber Mines](./Cyber_Mines)
+### 💣 [Cyber-Mines](./cyber-mines)
 A premium Minesweeper experience with a high-tech UI, tactical animations, and classic logic puzzles.
 
-### ⚡ [Neon Strike](./Neon_Strike)
+### ⚡ [Neon-Strike](./neon-strike)
 An arcade-style experience focusing on visual flair and quick reactions, using ultra-modern CSS transients and glassmorphism.
 
-### ✊ [Rock Paper Scissors - Arcade Edition](./Game)
+### ✊ [Rock-Paper-Scissors](./game)
 An elevated version of the classic game with arcade-inspired typography, neon effects, and a custom reset system.
 
 ---
 
 ## 🛠️ Utility Applications
 
-### ☁️ [SkySentry | Premium Weather](./Weather_Detector)
+### ☁️ [SkySentry | Weather](./weather)
 A professional-grade weather dashboard with real-time data fetching, beautiful iconography, and a responsive layout.
 
-### 💱 [Currency Converter](./Currency_Converter)
+### 💱 [FinanceGo | Currency](./currency)
 A high-performance currency conversion tool with real-time API integration, clean input validation, and a sleek user interface.
 
 ---
@@ -50,4 +53,4 @@ A high-performance currency conversion tool with real-time API integration, clea
 
 ---
 
-*Made with ❤️ by [Agam Pathak]*
+*Made with ❤️ by Agam Pathak*

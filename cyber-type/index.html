@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberType | The Neural Link Hack</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    
+    <div class="game-container">
+        <!-- Stats Header -->
+        <header class="stats-header">
+            <div class="stat-box">
+                <span class="label">WPM</span>
+                <span id="wpm">0</span>
+            </div>
+            <div class="stat-box">
+                <span class="label">ACCURACY</span>
+                <span id="accuracy">100</span>%
+            </div>
+            <div class="stat-box">
+                <span class="label">TIME</span>
+                <span id="timer">60</span>s
+            </div>
+        </header>
+
+        <!-- Main Display Arena -->
+        <div id="arena" class="arena">
+            <div id="start-screen" class="start-screen">
+                <h1 class="logo">CYBER<span>TYPE</span></h1>
+                <p class="subtitle">NEURAL LINK BREACH INITIATED</p>
+                <div class="difficulty-selection">
+                    <button class="diff-btn active" data-time="60">GHOST (60s)</button>
+                    <button class="diff-btn" data-time="30">AGENT (30s)</button>
+                    <button class="diff-btn" data-time="15">NIGHTCRAWLER (15s)</button>
+                </div>
+                <button id="start-btn" class="main-btn">ESTABLISH LINK</button>
+            </div>
+
+            <!-- Words will spawn here -->
+            <div id="word-field"></div>
+        </div>
+
+        <!-- Input Bar -->
+        <div class="input-container">
+            <div class="input-wrapper">
+                <input type="text" id="type-input" placeholder="ACCESS SYSTEM..." autocomplete="off" disabled>
+                <div class="input-glow"></div>
+            </div>
+        </div>
+
+        <div id="game-over" class="game-over hidden">
+            <h2>LINK TERMINATED</h2>
+            <div class="final-stats">
+                <p>Final WPM: <span id="final-wpm">0</span></p>
+                <p>Accuracy: <span id="final-accuracy">0</span>%</p>
+                <p>Score: <span id="final-score">0</span></p>
+            </div>
+            <button id="restart-btn" class="main-btn">RE-INITIALIZE</button>
+        </div>
+    </div>
+
+    <!-- Retro SFX Assets (Mock URLs for now) -->
+    <audio id="sfx-correct" src="https://assets.mixkit.co/sfx/preview/mixkit-mechanical-keyboard-single-key-press-2533.mp3"></audio>
+    <audio id="sfx-wrong" src="https://assets.mixkit.co/sfx/preview/mixkit-software-interface-back-2575.mp3"></audio>
+    <audio id="sfx-start" src="https://assets.mixkit.co/sfx/preview/mixkit-industrial-mechanical-device-start-2633.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
