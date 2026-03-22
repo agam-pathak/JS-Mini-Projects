@@ -65,16 +65,22 @@ function stopRotateWheel() {
     clearTimeout(spinTimeout);
     const degrees = startAngle * 180 / Math.PI + 90;
     const arcd = arc * 180 / Math.PI;
-    const index = Math.floor((360 - degrees % 360) / arcd);
+    let index = Math.floor((360 - degrees % 360) / arcd);
+    index = (index + prizes.length) % prizes.length; // Ensure index is within [0, 7]
     
     const win = prizes[index];
-    lastWin.innerText = `WIN: ${win.label}`;
-    lastWin.style.color = win.color;
-    lastWin.classList.add('active');
+    if (win) {
+        lastWin.innerText = `WIN: ${win.label}`;
+        lastWin.style.color = win.color;
+        lastWin.classList.add('active');
+    }
     spinBtn.disabled = false;
     
-    // SFX
-    document.getElementById('sfx-win').play();
+    // SFX Safety
+    try {
+        const sfxWin = document.getElementById('sfx-win');
+        if (sfxWin) sfxWin.play().catch(() => {});
+    } catch(e) {}
 }
 
 function easeOut(t, b, c, d) {
@@ -86,9 +92,15 @@ function easeOut(t, b, c, d) {
 spinBtn.onclick = () => {
     spinAngleStart = Math.random() * 10 + 10;
     spinTime = 0;
-    spinTimeTotal = Math.random() * 3 + 4 * 1000;
+    spinTimeTotal = (Math.random() * 3 + 4) * 1000; // 4 to 7 seconds
     spinBtn.disabled = true;
-    document.getElementById('sfx-spin').play();
+    
+    // SFX Safety
+    try {
+        const sfxSpin = document.getElementById('sfx-spin');
+        if (sfxSpin) sfxSpin.play().catch(() => {});
+    } catch(e) {}
+    
     rotateWheel();
 };
 
