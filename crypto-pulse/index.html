@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoPulse | Real-Time Market Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <div class="logo">
+                <h1>Crypto<span>Pulse</span></h1>
+                <p>Real-Time Market Data Hub</p>
+            </div>
+            <div id="connection-status" class="status-badge connected">
+                <span class="pulse-dot"></span>
+                LIVE NETWORK FEED
+            </div>
+        </header>
+
+        <main class="market-grid" id="market-grid">
+            <!-- Cards will be populated by script -->
+            <div class="loader-container">
+                <div class="loader"></div>
+                <p>SYNCHRONIZING WITH BLOCKCHAIN...</p>
+            </div>
+        </main>
+
+        <footer>
+            <div class="market-stats">
+                <span>Total Assets Tracking: <strong id="asset-count">0</strong></span>
+                <span>Last Updated: <span id="last-update">Syncing...</span></span>
+            </div>
+            <p>&copy; 2026 Powered by CryptoPulse API</p>
+        </footer>
+    </div>
+
+    <!-- Background Decoration -->
+    <div class="grid-overlay"></div>
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

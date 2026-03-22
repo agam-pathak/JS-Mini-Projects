@@ -39,6 +39,12 @@ A professional-grade weather dashboard with real-time data fetching, beautiful i
 ### 💱 [FinanceGo | Currency](./currency)
 A high-performance currency conversion tool with real-time API integration, clean input validation, and a sleek user interface.
 
+### 📉 [CryptoPulse | Live Market](./crypto-pulse)
+Real-time crypto asset tracker. Fetches live data from the CoinGecko API, featuring glowing market indicators and high-end visual design.
+
+### ⏱️ [ZenTimer | Focus](./zen-timer)
+Ultra-minimalist Pomodoro timer for deep work. Includes session tracking, custom work modes, and soft gradient transitions.
+
 ---
 
 ## 🛠️ Tech Stack
