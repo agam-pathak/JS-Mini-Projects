@@ -1,6 +1,8 @@
-# 🚀 JavaScript Mini-Projects Collection
+# 🚀 JS Arcade | Mini-Projects Collection
 
-A premium collection of high-performance arcade games and modern utility applications built using pure JavaScript, HTML5, and CSS3. Each project showcases unique design principles, animations, and robust logic.
+A premium "Game Gallery" and collection of high-performance arcade games and modern utilities. 
+
+**🎮 [Launch the Arcade Lobby](index.html)** - Explore all projects from a single interactive dashboard.
 
 ---
 
