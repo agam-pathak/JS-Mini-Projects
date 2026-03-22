@@ -1,0 +1,182 @@
+:root {
+    --bg-dark: #050608;
+    --neon-blue: #00f2fe;
+    --neon-purple: #9d50bb;
+    --neon-pink: #f222ff;
+    --accent-gold: #f6d365;
+    --danger-red: #ff3e3e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: #fff;
+    font-family: 'Exo 2', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.game-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.neon-title {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 2.2rem;
+    letter-spacing: 4px;
+    background: linear-gradient(to right, var(--neon-blue), var(--neon-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 10px rgba(0, 242, 254, 0.4));
+}
+
+.stat-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100px;
+}
+
+.stat-box .label {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: var(--neon-blue);
+    opacity: 0.7;
+    margin-bottom: 5px;
+}
+
+.stat-box .value {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.lives-container {
+    display: flex;
+    gap: 8px;
+}
+
+.life-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--neon-pink);
+    box-shadow: 0 0 8px var(--neon-pink);
+}
+
+.life-dot.lost {
+    background-color: #333;
+    box-shadow: none;
+}
+
+/* Canvas & Overlays */
+.canvas-container {
+    position: relative;
+    border: 3px solid rgba(0, 242, 254, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0, 242, 254, 0.1);
+    background: rgba(10, 10, 15, 0.9);
+    padding: 10px;
+}
+
+canvas {
+    display: block;
+    cursor: none; /* Hide cursor while over canvas */
+}
+
+.overlay {
+    position: absolute;
+    inset: 10px;
+    background: rgba(5, 6, 8, 0.85);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    z-index: 100;
+    transition: opacity 0.3s ease;
+}
+
+.overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.content {
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    letter-spacing: 4px;
+}
+
+.danger { color: var(--danger-red); }
+.success { color: var(--neon-blue); }
+
+.controls-info {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: #888;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+button {
+    background: transparent;
+    border: 2px solid var(--neon-blue);
+    color: var(--neon-blue);
+    padding: 12px 35px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background: var(--neon-blue);
+    color: var(--bg-dark);
+    box-shadow: 0 0 20px var(--neon-blue);
+}
+
+/* Powerup Bar */
+.active-powerups {
+    display: flex;
+    gap: 15px;
+    min-height: 30px;
+}
+
+.powerup-tag {
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 4px;
+    border: 1px solid var(--accent-gold);
+    color: var(--accent-gold);
+}

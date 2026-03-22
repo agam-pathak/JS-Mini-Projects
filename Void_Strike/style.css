@@ -1,0 +1,189 @@
+:root {
+    --bg-void: #050608;
+    --neon-blue: #00f2fe;
+    --neon-purple: #9d50bb;
+    --neon-green: #39ff14;
+    --danger-red: #ff3131;
+    --experience-gold: #f6d365;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-void);
+    color: #fff;
+    font-family: 'Share Tech Mono', monospace;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+.game-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+canvas {
+    display: block;
+    cursor: crosshair;
+}
+
+/* HUD Styling */
+.hud {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    right: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.stat-group {
+    width: 250px;
+    margin-bottom: 10px;
+}
+
+.stat-group .label {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: var(--neon-blue);
+    margin-bottom: 4px;
+    display: block;
+}
+
+.progress-bar {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.fill {
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.health-bar .fill { background: var(--neon-blue); box-shadow: 0 0 10px var(--neon-blue); }
+.exp-bar .fill { background: var(--experience-gold); box-shadow: 0 0 10px var(--experience-gold); }
+
+.glitch-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: 8px;
+    background: linear-gradient(to right, var(--neon-blue), var(--neon-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.score-box {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.score-box .label {
+    font-size: 0.6rem;
+    color: #888;
+    letter-spacing: 2px;
+}
+
+.score-box .value {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    color: var(--neon-purple);
+    text-shadow: 0 0 10px var(--neon-purple);
+}
+
+/* Modals & Overlays */
+.overlay, .modal {
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 6, 8, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+    transition: opacity 0.4s ease;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.content, .modal-content {
+    text-align: center;
+    max-width: 600px;
+    padding: 40px;
+    border: 1px solid rgba(0, 242, 254, 0.2);
+    border-radius: 12px;
+}
+
+h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: var(--neon-blue);
+}
+
+.upgrade-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.upgrade-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--neon-purple);
+    padding: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.upgrade-card:hover {
+    background: var(--neon-purple);
+    color: #000;
+    transform: translateY(-5px);
+}
+
+.upgrade-card h3 {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+}
+
+.upgrade-card p {
+    font-size: 0.7rem;
+    opacity: 0.8;
+}
+
+button {
+    margin-top: 30px;
+    background: transparent;
+    border: 2px solid var(--neon-blue);
+    color: var(--neon-blue);
+    padding: 12px 40px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background: var(--neon-blue);
+    color: #000;
+    box-shadow: 0 0 20px var(--neon-blue);
+}

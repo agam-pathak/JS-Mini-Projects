@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcade Rush | Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="rock.png">
+</head>
+<body>
+    <h1>Arcade Rush</h1>
+    
+    <div class="score-board">
+        <div class="score">
+            <p id="user-score">0</p>
+            <p>Player</p>
+        </div>
+        <div class="score">
+            <p id="comp-score">0</p>
+            <p>Computer</p>
+        </div>
+    </div>
+
+    <div class="choices">
+        <div class="choice" id="rock" title="Choose Rock">
+            <img src="rock.png" alt="Rock">
+        </div>
+        <div class="choice" id="paper" title="Choose Paper">
+            <img src="paper.png" alt="Paper">
+        </div>
+        <div class="choice" id="scissors" title="Choose Scissors">
+            <img src="scissors.png" alt="Scissors">
+        </div>
+    </div>
+
+    <div class="msg-container">
+        <p id="msg">Choose your weapon</p>
+    </div>
+
+    <div class="reset-container">
+        <button id="reset-btn">Reset Game</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

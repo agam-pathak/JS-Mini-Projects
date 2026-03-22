@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon-Strike: Brick Breaker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-wrapper">
+        <header>
+            <div class="stat-box">
+                <span class="label">SCORE</span>
+                <span id="score" class="value">0</span>
+            </div>
+            <h1 class="neon-title">NEON STRIKE</h1>
+            <div class="stat-box">
+                <span class="label">LIVES</span>
+                <div id="lives-container" class="lives-container">
+                    <div class="life-dot"></div>
+                    <div class="life-dot"></div>
+                    <div class="life-dot"></div>
+                </div>
+            </div>
+        </header>
+
+        <div class="canvas-container">
+            <canvas id="gameCanvas" width="800" height="600"></canvas>
+            
+            <!-- Screens -->
+            <div id="start-screen" class="overlay">
+                <div class="content">
+                    <h2>READY STRIKER?</h2>
+                    <p>Break the pulse. Control the strike.</p>
+                    <div class="controls-info">
+                        <span>MOUSE OR ARROWS TO MOVE</span>
+                    </div>
+                    <button id="start-btn">INITIATE</button>
+                </div>
+            </div>
+
+            <div id="game-over-screen" class="overlay hidden">
+                <div class="content">
+                    <h2 class="danger">SYSTEM COLLAPSE</h2>
+                    <p>Final Score: <span id="final-score">0</span></p>
+                    <button id="restart-btn">REBOOT</button>
+                </div>
+            </div>
+
+            <div id="win-screen" class="overlay hidden">
+                <div class="content">
+                    <h2 class="success">GRID CLEARED</h2>
+                    <p>Strike Efficiency: 100%</p>
+                    <button id="next-level-btn">NEXT SECTOR</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="active-powerups" id="powerup-bar">
+            <!-- Active powerups will show here -->
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Void-Strike: Tactical Vector Shooter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- HUD Overlay -->
+        <div class="hud">
+            <div class="left-stats">
+                <div class="stat-group">
+                    <span class="label">POWER CORE</span>
+                    <div class="progress-bar health-bar">
+                        <div id="hp-fill" class="fill" style="width: 100%"></div>
+                    </div>
+                </div>
+                <div class="stat-group">
+                    <span class="label">EXP DATA</span>
+                    <div class="progress-bar exp-bar">
+                        <div id="exp-fill" class="fill" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="center-meta">
+                <h1 class="glitch-text" data-text="VOID-STRIKE">VOID-STRIKE</h1>
+            </div>
+
+            <div class="right-stats">
+                <div class="score-box">
+                    <span class="label">ELIMINATIONS</span>
+                    <span id="score" class="value">000</span>
+                </div>
+                <div class="score-box">
+                    <span class="label">WAVE</span>
+                    <span id="wave" class="value">01</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Upgrade Selection Modal -->
+        <div id="upgrade-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2>CORE EVOLUTION DETECTED</h2>
+                <p>Choose an Augmentation:</p>
+                <div class="upgrade-grid" id="upgrade-options">
+                    <!-- Dynamic upgrades here -->
+                </div>
+            </div>
+        </div>
+
+        <canvas id="gameCanvas"></canvas>
+
+        <div id="overlay" class="overlay">
+            <div class="content">
+                <h2 id="overlay-title">SYSTEM READY</h2>
+                <p id="overlay-desc">WASD to Move | MOUSE to Aim & Fire</p>
+                <button id="start-btn">ENGAGE PILOT</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

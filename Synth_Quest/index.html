@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SynthQuest: Endless Neon Runner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="viewport">
+        <!-- Parallax Background Layers -->
+        <div class="parallax-layer layer-bg"></div>
+        <div class="parallax-layer layer-mountains"></div>
+        <div class="parallax-layer layer-city"></div>
+        
+        <div class="ui-overlay">
+            <div class="stats-panel">
+                <div class="stat-item">
+                    <span class="label">DISTANCE</span>
+                    <span id="distance" class="value">0000m</span>
+                </div>
+                <div class="stat-item">
+                    <span class="label">BEST</span>
+                    <span id="best-distance" class="value">0000m</span>
+                </div>
+            </div>
+        </div>
+
+        <canvas id="gameCanvas"></canvas>
+
+        <div id="start-screen" class="screen show">
+            <h1 class="glitch-text" data-text="SYNTHQUEST">SYNTHQUEST</h1>
+            <p class="desc">Dodge the void. Charge the core.</p>
+            <div class="instructions">
+                <div class="key-hint"><span>SPACE</span> / <span>CLICK</span> to Jump</div>
+                <div class="key-hint"><span>DOUBLE PRESS</span> to Double Jump</div>
+            </div>
+            <button id="start-btn">ENGAGE CORE</button>
+        </div>
+
+        <div id="game-over-screen" class="screen hidden">
+            <h2 class="title danger">CORE BREACH</h2>
+            <div class="final-stats">
+                <div class="result-box">
+                    <span class="label">FINAL DISTANCE</span>
+                    <span id="final-distance" class="value">0m</span>
+                </div>
+                <div class="result-box high-score hidden" id="new-record-tag">
+                    <span>NEW RECORD!</span>
+                </div>
+            </div>
+            <button id="restart-btn">REBOOT SYSTEM</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

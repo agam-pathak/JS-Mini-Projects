@@ -1,0 +1,257 @@
+:root {
+    --bg-color: #0d0e15;
+    --panel-bg: rgba(20, 22, 33, 0.6);
+    --border-color: rgba(64, 224, 208, 0.3);
+    --text-primary: #f0f0f0;
+    --text-secondary: #8892b0;
+    --accent: #00f2fe;
+    --snake-head: #4facfe;
+    --snake-body: #00f2fe;
+    --food-color: #ff0844;
+    --gold-color: #f6d365;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: 'Share Tech Mono', monospace;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Flow from top to prevent cutting off header */
+    align-items: center;
+    overflow-y: auto; /* Allow scrolling if screen is short */
+    overflow-x: hidden;
+    position: relative;
+    padding: 20px 0;
+}
+
+/* Background Glowing Orbs */
+.background-effects {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.4;
+    animation: float 10s infinite ease-in-out alternate;
+}
+
+.orb-1 {
+    width: 300px;
+    height: 300px;
+    background: var(--accent);
+    top: -50px;
+    left: 10%;
+}
+
+.orb-2 {
+    width: 400px;
+    height: 400px;
+    background: var(--food-color);
+    bottom: -100px;
+    right: 5%;
+    animation-delay: -5s;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) scale(1); }
+    100% { transform: translateY(50px) scale(1.1); }
+}
+
+/* Main Container */
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Tighter gap for bigger canvas */
+    z-index: 1;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--accent);
+    text-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
+    position: relative;
+    margin-bottom: 5px;
+}
+
+/* Score Board */
+.score-board {
+    display: flex;
+    gap: 30px;
+}
+
+.score-box {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-color);
+    padding: 8px 16px;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 120px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.score-box .label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    letter-spacing: 2px;
+}
+
+.score-box .value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent);
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Screen Shake Effect for Damage/Game Over */
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.shake {
+    animation: shake 0.4s;
+}
+
+/* Canvas Area */
+.canvas-wrapper {
+    position: relative;
+    padding: 10px;
+    background: var(--panel-bg);
+    border-radius: 12px;
+    border: 2px solid var(--border-color);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(0, 242, 254, 0.1);
+}
+
+canvas {
+    background-color: rgba(10, 10, 15, 0.9);
+    border-radius: 4px;
+    display: block;
+    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.9); /* Stronger inner shadow for arcade feel */
+}
+
+/* Overlay / Menu */
+.overlay {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background: rgba(13, 14, 21, 0.85);
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    transition: opacity 0.3s ease;
+}
+
+.overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.overlay-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+#overlay-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    color: var(--accent);
+    text-shadow: 0 0 15px var(--accent);
+}
+
+#overlay-title.game-over {
+    color: var(--food-color);
+    text-shadow: 0 0 15px var(--food-color);
+}
+
+#overlay-desc {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+}
+
+button {
+    margin-top: 15px;
+    background: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    padding: 12px 30px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background: var(--accent);
+    color: var(--bg-color);
+    box-shadow: 0 0 20px var(--accent);
+}
+
+button.hidden {
+    display: none;
+}
+
+/* Controls Hint */
+.controls-hint p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.controls-hint span {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: var(--text-primary);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85rem;
+}

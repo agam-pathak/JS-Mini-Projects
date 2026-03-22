@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber-Mines: Tactical Scan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cyber-mines-container">
+        <header>
+            <div class="header-main">
+                <h1 class="scan-text">CYBER MINES</h1>
+                <div class="dashboard">
+                    <div class="dash-item">
+                        <span class="label">MINES</span>
+                        <span id="mine-count" class="value">00</span>
+                    </div>
+                    <div class="dash-item">
+                        <span class="label">TIME</span>
+                        <span id="timer" class="value">000</span>
+                    </div>
+                </div>
+            </div>
+            <div class="controls-panel">
+                <button id="reset-btn" class="icon-btn">RESCAN</button>
+            </div>
+        </header>
+
+        <div class="grid-viewport">
+            <div id="grid" class="mine-grid"></div>
+        </div>
+
+        <div id="overlay" class="overlay hidden">
+            <div class="message-box">
+                <h2 id="status-text">THREAT NEUTRALIZED</h2>
+                <p id="details-text">Sector safe. Data extracted.</p>
+                <button onclick="location.reload()">DOWNLOAD ACCESS KEY</button>
+            </div>
+        </div>
+
+        <div class="hint">
+            <p>LEFT CLICK TO SCAN | RIGHT CLICK TO FLAG THREAT</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

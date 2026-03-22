@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkySentry | Premium Weather</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+</head>
+<body>
+
+    <div class="container">
+        <h1>Weather Detector</h1>
+
+        <form action="#" id="weather-form">
+            <input type="text" name="city" placeholder="Enter City Name..." required autocomplete="off">
+            <input type="submit" value="Search">
+        </form>
+
+        <div class="weather" id="weather-display">
+            <h2>Current Weather in</h2>
+            <span id="city">City Name</span>
+            
+            <div id="weather-icon-container">
+                <!-- Icon will be inserted here via JS -->
+            </div>
+
+            <div class="main-temp" id="temp">0°C</div>
+            <div class="desc" id="weather">Cloudy</div>
+
+            <div class="details-grid">
+                <div class="detail-item">
+                    <span>Humidity</span>
+                    <span id="humidity">0%</span>
+                </div>
+                <div class="detail-item">
+                    <span>Wind Speed</span>
+                    <span id="wind-speed">0 m/s</span>
+                </div>
+                <div class="detail-item">
+                    <span>Pressure</span>
+                    <span id="pressure">0 hPa</span>
+                </div>
+                <div class="detail-item">
+                    <span>Country</span>
+                    <span id="country">--</span>
+                </div>
+            </div>
+            
+            <!-- Hidden technical details for analysis -->
+            <div style="display: none;">
+                <span id="lat"></span>
+                <span id="lon"></span>
+            </div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
